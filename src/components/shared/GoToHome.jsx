@@ -15,7 +15,7 @@ export default function GoToHomeSection({ delay = 0 }) {
         <div className="profile-image-container">
           <img src={meImage} alt="Profile" className="profile-image" />
         </div>
-        <h2 className="profile-name">Sidney</h2>
+        <h2 className="profile-name">Nyenzo</h2>
         <div className="social-icons">
           <span className="social-icon"><Twitter size={16} /></span>
           <span className="social-icon"><Instagram size={16} /></span>

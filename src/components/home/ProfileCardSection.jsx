@@ -69,7 +69,7 @@ export default function ProfileCardSection({ delay = 0 }) {
           <span className="tag"><Globe size={12} /> English & Swahili</span>
           <span className="tag"><GraduationCap size={12} /> Software Engineer</span>
           <span className="tag"><Clock size={12} /> EST</span>
-          <span className="tag"><Building2 size={12} /> Multimedia University</span>
+          <span className="tag"><Building2 size={12} /> JKUAT University</span>
         </div>
         <div className="profile-actions">
           <button className="btn btn-full"><Send size={16} /> Telegram Me</button>

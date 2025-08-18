@@ -4,8 +4,8 @@ import "../../styles/chat.css"
 export default function ChatSection({delay = 0}) {
   return (
     <Section delay={delay}>
-      <div className="chat-container">
-
+        <div className="chat-container">
+      Chat component
       </div>
     </Section>
   )
