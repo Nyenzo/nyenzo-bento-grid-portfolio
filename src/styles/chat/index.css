@@ -1,0 +1,10 @@
+/* Main Chat Styles - Imports all chat component styles */
+@import './chat.css';
+@import './message-input.css';
+@import './message-list.css';
+@import './message-row.css';
+@import './user-message.css';
+@import './assistant-message.css';
+@import './bubble-message-content.css';
+@import './tool-message.css';
+@import './welcome-message.css';

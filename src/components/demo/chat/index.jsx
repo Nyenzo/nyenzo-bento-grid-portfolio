@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {api} from "../../../../convex/_generated/api";
 import { useMutation } from "convex/react";
+import ThreadView  from './ThreadView.jsx';
 
 function ChatSection() {
     const createThread = useMutation(api.demo.chat.createThread)
@@ -11,11 +12,13 @@ function ChatSection() {
             <h1>Convex agent demo</h1>
         </div>
         {
-            threadId ? (<div>Thread open</div>) : (
+            threadId ? (
+                <ThreadView threadId={threadId} />
+            ): (
                 <div>
                     <p>No thread created</p>
                     <button onClick={() => createThread().then(setThreadId)}>
-                        create thread
+                        Create Thread
                     </button>
                 </div>
         )

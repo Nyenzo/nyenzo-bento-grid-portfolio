@@ -124,3 +124,36 @@ h1 span, h2 span, h3 span {
   border-radius: 14px;
   padding: 16px;
 }
+
+/* ===== GLOBAL SCROLLBAR STYLING ===== */
+/* Custom scrollbar styles for the entire app */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-base) var(--surface-2);
+}
+
+/* Webkit scrollbar styles for Chrome/Safari/Edge */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-3);
+}
+
+/* Firefox scrollbar styles */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-3) var(--surface-1);
+}

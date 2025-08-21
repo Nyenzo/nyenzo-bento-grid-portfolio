@@ -9,6 +9,9 @@
  */
 
 import type * as demo_chat from "../demo/chat.js";
+import type * as nyenzobot_lib from "../nyenzobot/lib.js";
+import type * as nyenzobot_mutation from "../nyenzobot/mutation.js";
+import type * as users from "../users.js";
 
 import type {
   ApiFromModules,
@@ -26,6 +29,9 @@ import type {
  */
 declare const fullApi: ApiFromModules<{
   "demo/chat": typeof demo_chat;
+  "nyenzobot/lib": typeof nyenzobot_lib;
+  "nyenzobot/mutation": typeof nyenzobot_mutation;
+  users: typeof users;
 }>;
 declare const fullApiWithMounts: typeof fullApi;
 

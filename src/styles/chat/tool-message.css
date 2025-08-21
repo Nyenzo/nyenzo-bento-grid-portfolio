@@ -1,0 +1,39 @@
+.tool-message {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0;
+}
+
+.tool-message-content {
+  color: var(--text-2);
+  font-size: 0.97em;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-style: italic;
+  opacity: 0.7;
+  margin: 0.375rem 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--surface-2);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+}
+
+.tool-message-icon {
+  opacity: 0.5;
+  font-size: 1.1em;
+}
+
+.tool-message-text {
+  font-weight: 500;
+}
+
+.tool-message-query {
+  font-weight: 500;
+  color: var(--text-1);
+}
+
+.tool-message-unknown {
+  color: var(--text-3);
+  font-style: normal;
+}

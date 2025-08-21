@@ -1,0 +1,22 @@
+.bubble-message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bubble-message-content-markdown {
+  margin: 0;
+}
+
+.bubble-message-content-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.bubble-message-content-loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

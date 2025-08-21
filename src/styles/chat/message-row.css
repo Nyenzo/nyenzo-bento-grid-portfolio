@@ -1,0 +1,20 @@
+.message-row {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.message-row-user {
+  justify-content: flex-end;
+}
+
+.message-row-assistant {
+  justify-content: flex-start;
+}
+
+.message-row-tool {
+  justify-content: center;
+}
+
+.message-row-system {
+  display: none;
+}

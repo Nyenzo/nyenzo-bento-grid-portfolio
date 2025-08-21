@@ -1,0 +1,27 @@
+.user-message {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.user-message-content {
+  position: relative;
+  padding-left: 60px;
+  padding-right: 10px;
+  max-width: 90%;
+}
+
+.user-message-bubble {
+  background-color: var(--accent-subdued);
+  color: var(--black);
+  padding: 0.75rem 1rem;
+  border-radius: 1rem 1rem 0.25rem 1rem;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.user-message-bubble p {
+  margin: 0;
+}
