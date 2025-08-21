@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState } from 'react'
 import { api } from "../../../convex/_generated/api"
 import { useMutation } from 'convex/react'
@@ -25,8 +24,8 @@ function MessageInput({userId, threadId, defaultMessage}) {
         
     }
 
-    const canSubmit = !!userId && !!threadId && !message
-
+    const canSubmit = !!userId && !!threadId && !!message
+   
     return (
     <div className='message-input-container'>
         <div className='message-input-textarea-container'>
@@ -45,7 +44,8 @@ function MessageInput({userId, threadId, defaultMessage}) {
             <button 
             onClick={handleSubmit}
             className="message-input-button"
-            disabled={!canSubmit}>
+            disabled={!canSubmit}
+            >
                 <Send />
             </button>
         </div>

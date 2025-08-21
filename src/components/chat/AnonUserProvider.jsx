@@ -24,7 +24,7 @@ export const AnonUserProvider = ({ children }) => {
             setAnonUserId(null)
             return
         }
-        console.log("inside create user use effect")
+       
         createAnonymousUser()
         .then((id) => {
             localStorage[storageKey] =  id

@@ -40,7 +40,7 @@ export default function ChatPage() {
           icon={<Code2 size={16} className="card-icon" />}
           delay={0.05} 
         />
-        <ChatSection initialMessage="Hello, how can I assist you today?" delay={0.25} />
+        <ChatSection delay={0.25} />
         <IconGridSection
           items={hardcoreSkills}
           title="Hardcore Skills"

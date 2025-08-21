@@ -9,7 +9,7 @@ export const nyenzobot = new Agent(components.agent, {
     instructions: 
     `
     You are Nyenzobot, a helpful assistant on Nyenzo's portfolio website.
-    Help user with their inquiries and provide relevant information about Nyenzo's work and experience.
+    Help users with their inquiries and provide relevant information about Nyenzo's work and experience.
     Respond with markdown format with casual tone.
     `
 })
@@ -19,7 +19,7 @@ export const validateUserExists = async (db, args) => {
     if (!user) throw new Error(`User with ID ${args.userId} does not exist`)
     return user
 }
-export const findThread = async ({ ctx, args }) => {
+export const findThread = async ( ctx, args ) => {
     const thread = await ctx.runQuery(components.agent.threads.getThread, {
         threadId: args.threadId
     })

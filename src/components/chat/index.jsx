@@ -7,6 +7,8 @@ import {useAnonUser} from "./AnonUserContext"
 import { useState, useCallback, useRef } from "react"
 import { useQueryWithStatus } from "./helper"
 import MessageInput from "./MessageInput"
+import MessageList from "./MessageList"
+
 
 const currentThreadIdStorageKey = "nyenzobot_current_thread_id"
 
@@ -45,12 +47,6 @@ export default function Chat({initialMessage}) {
     }
   }, [anonUser, currentThreadId, handleCreateThread])
 
-  useEffect(() => {
-    if (!anonUser) return
-    if(!currentThreadId) {
-      handleCreateThread()
-    }
-  },[anonUser, currentThreadId, handleCreateThread])
 
   return (
     <div className="chat-container">
@@ -71,9 +67,16 @@ export default function Chat({initialMessage}) {
         </button>
       </div>
       <div className="chat-messages-container">
-       
-        {/* <MessagesList 
-        /> */}
+       {threadQuery.data && anonUser ? (
+
+        <MessageList
+          threadId={threadQuery.data._id}
+          userId={anonUser._id}
+        />
+       ) : (
+          <div>No messages yet</div>
+       )}
+
         <div className="chat-input-wrapper">
            <MessageInput
           userId={anonUser?._id}
