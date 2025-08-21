@@ -9,8 +9,10 @@
  */
 
 import type * as demo_chat from "../demo/chat.js";
+import type * as nyenzobot_internal_action from "../nyenzobot/internal/action.js";
 import type * as nyenzobot_lib from "../nyenzobot/lib.js";
 import type * as nyenzobot_mutation from "../nyenzobot/mutation.js";
+import type * as nyenzobot_queries from "../nyenzobot/queries.js";
 import type * as users from "../users.js";
 
 import type {
@@ -29,8 +31,10 @@ import type {
  */
 declare const fullApi: ApiFromModules<{
   "demo/chat": typeof demo_chat;
+  "nyenzobot/internal/action": typeof nyenzobot_internal_action;
   "nyenzobot/lib": typeof nyenzobot_lib;
   "nyenzobot/mutation": typeof nyenzobot_mutation;
+  "nyenzobot/queries": typeof nyenzobot_queries;
   users: typeof users;
 }>;
 declare const fullApiWithMounts: typeof fullApi;

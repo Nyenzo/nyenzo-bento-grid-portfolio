@@ -5,28 +5,32 @@ import {useMutation} from "convex/react"
 import { useEffect } from "react"
 import {useAnonUser} from "./AnonUserContext"
 import { useState, useCallback, useRef } from "react"
+import { useQueryWithStatus } from "./helper"
+import MessageInput from "./MessageInput"
 
 const currentThreadIdStorageKey = "nyenzobot_current_thread_id"
 
-export default function Chat() {
+export default function Chat({initialMessage}) {
   const anonUser = useAnonUser()
   const hasInitialized = useRef(false)
   const [currentThreadId, setCurrentThreadId] = useState(
     () => localStorage[currentThreadIdStorageKey] || null
   )
 
-  console.log('anon user:', anonUser)
 
   const createThread = useMutation(api.nyenzobot.mutation.createThreadForUser)
 
-  const handleCreateThread = useCallback(async ()=> {
-        console.log('inside handle create')
+  const threadQuery = useQueryWithStatus(
+    api.nyenzobot.queries.findThreadForUser,
+    currentThreadId && anonUser ? {threadId: currentThreadId, userId: anonUser._id} : "skip"
+  )
 
+  const handleCreateThread = useCallback(async ()=> {
     if (!anonUser || hasInitialized.current) return
     
     hasInitialized.current = true
     try{
-      const id = await createThread({userId: anonUser.id})
+      const id = await createThread({userId: anonUser._id})
       localStorage[currentThreadIdStorageKey] = id
       setCurrentThreadId(id)
     }catch (error){
@@ -66,10 +70,17 @@ export default function Chat() {
           <BrushCleaning size={16} className="chat-icon" />
         </button>
       </div>
-      <div className="chat-message-container">
+      <div className="chat-messages-container">
        
         {/* <MessagesList 
         /> */}
+        <div className="chat-input-wrapper">
+           <MessageInput
+          userId={anonUser?._id}
+          threadId={threadQuery.data?._id}
+          defaultMessage={initialMessage}
+          />
+        </div>
       </div>
       </div>
   )

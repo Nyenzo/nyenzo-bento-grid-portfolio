@@ -19,3 +19,27 @@ export const validateUserExists = async (db, args) => {
     if (!user) throw new Error(`User with ID ${args.userId} does not exist`)
     return user
 }
+export const findThread = async ({ ctx, args }) => {
+    const thread = await ctx.runQuery(components.agent.threads.getThread, {
+        threadId: args.threadId
+    })
+
+    return thread
+
+}
+export const validateThreadBelongsToUser = async ({ thread, userId }) => {
+    if(thread.userId != userId)
+        throw new Error('Why are you snooping')
+
+        return thread
+}
+
+export const getAndValidateThread = async (ctx, args) => {
+    const thread = await findThread(ctx, { threadId: args.threadId})
+    if(!thread) throw new Error('Thread not found')
+
+        validateThreadBelongsToUser({ thread, userId: args.userId})
+
+
+        return thread
+}
