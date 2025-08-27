@@ -24,7 +24,7 @@ export const sendMessageToThreadFromUser = mutation({
     },
     handler: async (ctx, args) => {
 
-    await getAndValidateThread(ctx, { thread: args.threadId, userId: args.userId})
+    await getAndValidateThread(ctx, { threadId: args.threadId, userId: args.userId})
 
         const { messageId } = await nyenzobot.saveMessage(ctx, {
             threadId: args.threadId,

@@ -74,9 +74,14 @@ export default function Chat({initialMessage}) {
           userId={anonUser._id}
         />
        ) : (
-          <div>No messages yet</div>
+          <div className="chat-loading-container">
+            <div className="chat-loading-spinner">
+              loading...
+            </div>
+          </div>
        )}
 
+      </div>
         <div className="chat-input-wrapper">
            <MessageInput
           userId={anonUser?._id}
@@ -84,7 +89,6 @@ export default function Chat({initialMessage}) {
           defaultMessage={initialMessage}
           />
         </div>
-      </div>
       </div>
   )
 }

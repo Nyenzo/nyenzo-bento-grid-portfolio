@@ -1,5 +1,6 @@
 import { useSmoothText } from "@convex-dev/agent/react"
 import '../../../styles/chat/assistant-message.css'
+import BubbleMessageContent from "./BubbleMessageContent"
 
 function AssistantMessage({ message, status }) {
     const [visibleText] = useSmoothText(message.text ?? "")

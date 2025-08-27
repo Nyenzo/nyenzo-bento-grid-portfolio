@@ -14,9 +14,9 @@ function MessageList({threadId, userId}) {
   return (
     <div className='message-list-container'>
       {
-        messages.results.map((message) => {
+        messages.results.map((message) => (
             <MessageRow key={message._id} message={message} />
-        })
+        ))
       }
     </div>
   )

@@ -6,7 +6,7 @@ export const streamStory = internalAction({
     args: {promptMessageId: v.string(), threadId: v.string()},
     handler: async (ctx, {promptMessageId, threadId}) => {
         await nyenzobot.generateAndSaveEmbeddings(ctx, {
-            messageId: [promptMessageId]
+            messageIds: [promptMessageId]
         })
         //start streaming the response
     const result = await nyenzobot.streamText(
