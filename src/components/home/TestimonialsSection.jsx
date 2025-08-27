@@ -15,9 +15,9 @@ export default function TestimonialsSection({ delay = 0 }) {
   
   const testimonials = [
     {
-      name: "Brad Wilson",
-      location: "Nairobi, Kenya. 11, Feb 2024",
-      quote: "Sid's software development skills are exceptional. He built a complex AI-powered application that exceeded our expectations and delivered it ahead of schedule.",
+      name: "Tony Kamande",
+      location: "Nairobi, Kenya. 27, Aug 2025",
+      quote: "Peter is a natural leader who consistently takes initiative. On the bento-grid-ai project, he stepped up to guide the team, showcasing his ability to manage tasks and motivate others. His strong technical skills combined with his proactive approach make him an asset to any team. I was always impressed by his drive and commitment to success.",
       avatar: bradAvatar
     },
     {

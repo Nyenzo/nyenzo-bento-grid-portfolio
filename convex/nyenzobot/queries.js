@@ -1,6 +1,6 @@
 import { query } from "../_generated/server";
 import { v } from "convex/values"
-import { findThread, getAndValidateThread, nyenzobot, validateThreadBelongsToUser } from "./lib"
+import { findThread, getAndValidateThread, nyenzobot, validateThreadBelongsToUser, filterOutToolResults } from "./lib"
 import { paginationOptsValidator } from "convex/server";
 import { vStreamArgs } from "@convex-dev/agent";
 
@@ -36,7 +36,7 @@ export const listMessagesForUserThread = query({
             paginationOpts: args.paginationOpts
         })
 
-        // paginated.page = filterOutToolResults(paginated.page)
+        paginated.page = filterOutToolResults(paginated.page)
 
         const streams = await nyenzobot.syncStreams(ctx, {
             threadId: args.threadId,

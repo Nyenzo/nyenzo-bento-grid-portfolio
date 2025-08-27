@@ -1,5 +1,7 @@
 import Markdown from "react-markdown"
 import "../../../styles/chat/bubble-message-content.css"
+import { Spiral } from 'ldrs/react'
+import 'ldrs/react/Spiral.css'
 
 function BubbleMessageContent({ message, isLoading }) {
   return (
@@ -17,7 +19,11 @@ function BubbleMessageContent({ message, isLoading }) {
             isLoading ? (
                 <div className="bubble-message-content-loading">
                     <div className="bubble-message-content-loading-spinner">
-                        <div>Loading..</div>
+                        <Spiral
+                            size="40"
+                            speed="0.9"
+                            color="white" 
+                        />
                     </div> 
                 </div>
             ): null

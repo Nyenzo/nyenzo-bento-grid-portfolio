@@ -1,9 +1,11 @@
-import { useSmoothText } from "@convex-dev/agent/react"
 import '../../../styles/chat/assistant-message.css'
 import BubbleMessageContent from "./BubbleMessageContent"
+import ToolMessage from "./ToolMessage"
 
 function AssistantMessage({ message, status }) {
-    const [visibleText] = useSmoothText(message.text ?? "")
+    const messageText = message.text ?? ""
+    if(message.tool) return <ToolMessage message={message} />
+
   return (
     <div className="assistant-message">
         <div className="assistant-avatar">
@@ -12,7 +14,7 @@ function AssistantMessage({ message, status }) {
 
         <div className="assistant-message-container">
             <div className="assistant-message-bubble">
-                <BubbleMessageContent message={visibleText} isLoading={status === "pending"} />
+                <BubbleMessageContent message={messageText} isLoading={status === "pending"} />
             </div>
         </div>
     </div>

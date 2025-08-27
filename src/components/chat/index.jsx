@@ -8,17 +8,20 @@ import { useState, useCallback, useRef } from "react"
 import { useQueryWithStatus } from "./helper"
 import MessageInput from "./MessageInput"
 import MessageList from "./MessageList"
-
+import { Hatch } from 'ldrs/react'
+import 'ldrs/react/Hatch.css'
 
 const currentThreadIdStorageKey = "nyenzobot_current_thread_id"
 
 export default function Chat({initialMessage}) {
   const anonUser = useAnonUser()
   const hasInitialized = useRef(false)
+  const chatBoxRef = useRef(null)
+
   const [currentThreadId, setCurrentThreadId] = useState(
     () => localStorage[currentThreadIdStorageKey] || null
   )
-
+  const [messageCount, setMessageCount] = useState(0);
 
   const createThread = useMutation(api.nyenzobot.mutation.createThreadForUser)
 
@@ -40,6 +43,11 @@ export default function Chat({initialMessage}) {
       hasInitialized.current = false
     }
   }, [anonUser, createThread])
+
+  const handleMessageCountChange = useCallback((count) => {
+    setMessageCount(count);
+  }, []);
+
   useEffect(() => {
     if (!anonUser) return
     if(!currentThreadId) {
@@ -62,21 +70,37 @@ export default function Chat({initialMessage}) {
         <button
         className="chat-header-new-thread-btn"
         title="Start new conversation"
+        onClick={() =>{
+          if (!confirm("Are you sure you want to clear this thread?")) return;
+          localStorage.removeItem(currentThreadIdStorageKey);
+          setMessageCount(0);
+          setCurrentThreadId(null);
+          hasInitialized.current = false;
+        }}
+        disabled={!anonUser || messageCount === 0}
         >
           <BrushCleaning size={16} className="chat-icon" />
         </button>
       </div>
-      <div className="chat-messages-container">
+
+      <div  ref={chatBoxRef} className="chat-messages-container">
        {threadQuery.data && anonUser ? (
 
         <MessageList
           threadId={threadQuery.data._id}
           userId={anonUser._id}
+          chatBoxRef={chatBoxRef}
+          onMessageCountChange={handleMessageCountChange}
         />
        ) : (
           <div className="chat-loading-container">
             <div className="chat-loading-spinner">
-              loading...
+              <Hatch
+                size="28"
+                stroke="4"
+                speed="3.5"
+                color="white" 
+              />
             </div>
           </div>
        )}

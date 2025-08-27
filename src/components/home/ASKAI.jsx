@@ -29,7 +29,7 @@ export default function ASKAISection({ delay = 0 }) {
             onFocus={() => {
               // This will be replaced with actual chatbot integration later
               // For now, it can link to the works page
-              window.location.href = '/works'
+              window.location.href = '/chat'
             }}
           />
           <button className="send-button">
