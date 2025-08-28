@@ -4,7 +4,6 @@ import '../../../styles/chat/message-row.css'
 import { useRef } from "react"
 
 function MessageRow({ message }) {
-    console.log(message)
     const messageRef = useRef(null)
 
     if(!message.message) return "Message Missing"
