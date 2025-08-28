@@ -14,7 +14,7 @@ function WelcomeMessage({threadId, userId}) {
         });
     });
   return (
-    <div className='message-list-container welcome-econtainer'>
+    <div className='message-list-container welcome-container'>
         <div className='welcome-message'>
             <h2 className='welcome-title'> Hey there, here to tickle your thoughts. What would you like to know?</h2>
             <div className='suggested-prompts'>

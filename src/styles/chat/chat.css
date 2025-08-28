@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  background: var(--bg);
+  background: #0f192e; /* Darker than var(--bg) for chatbox */
   color: var(--text-1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -14,11 +14,15 @@
 }
 
 .chat-header {
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 4px;
+  justify-content: flex-start;
+  padding: 0.75rem 1rem 0.5rem 1rem;
   background: var(--bento-card-surface);
   border-bottom: 1px solid var(--bento-card-surface);
   border-radius: 1rem 1rem 0 0;
@@ -26,11 +30,12 @@
 }
 
 .chat-header-avatar {
-  position: absolute;
-  left: -20px;
-  bottom: -20px;
-  width: 80px;
-  height: 80px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  margin-right: 12px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--bento-card-surface);

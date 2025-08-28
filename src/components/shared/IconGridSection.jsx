@@ -23,6 +23,28 @@ export default function IconGridSection({
       </div>
       <div className={`tech-grid ${singleColumn ? 'single-column' : ''}`}>
         {items.map((item, index) => (
+          item.url ? (
+            <a
+              key={index}
+              className="tech-item btn"
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {typeof item.icon === 'string' ? (
+                <div className="tech-icon-container">
+                  <img src={item.icon} alt={item.name} className="tech-icon" />
+                </div>
+              ) : (
+                <div className="tech-icon-container">
+                  <span className="tech-icon">
+                    {React.createElement(item.icon, { size: 16 })}
+                  </span>
+                </div>
+              )}
+              <span>{item.name}</span>
+            </a>
+          ) : (
           <div key={index} className="tech-item">
             {typeof item.icon === 'string' ? (
               <div className="tech-icon-container">
@@ -37,6 +59,7 @@ export default function IconGridSection({
             )}
             <span>{item.name}</span>
           </div>
+          )
         ))}
       </div>
     </Section>

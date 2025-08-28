@@ -2,9 +2,10 @@ import { Section } from "../shared/Section"
 import { useEffect, useState, useRef } from "react"
 import { motion } from "motion/react"
 import { Star } from "lucide-react"
-import bradAvatar from "../../assets/avatars/brad.jpg"
-import pamAvatar from "../../assets/avatars/pam.jpg"
-import eduAvatar from "../../assets/avatars/edu.jpg"
+import tonyAvatar from "../../assets/avatars/tony.jpg"
+import liamAvatar from "../../assets/avatars/liam.jpg"
+// import pamAvatar from "../../assets/avatars/pam.jpg"
+// import eduAvatar from "../../assets/avatars/edu.jpg"
 import "../../styles/testimonials.css"
 import "../../styles/cards.css"
 
@@ -18,26 +19,26 @@ export default function TestimonialsSection({ delay = 0 }) {
       name: "Tony Kamande",
       location: "Nairobi, Kenya. 27, Aug 2025",
       quote: "Peter is a natural leader who consistently takes initiative. On the bento-grid-ai project, he stepped up to guide the team, showcasing his ability to manage tasks and motivate others. His strong technical skills combined with his proactive approach make him an asset to any team. I was always impressed by his drive and commitment to success.",
-      avatar: bradAvatar
+      avatar: tonyAvatar
     },
     {
-      name: "Pam Rodriguez",
-      location: "Mombasa, Kenya. 21, Jan 2024",
-      quote: "Working with Sid on our design project was incredible. His creative vision and technical expertise brought our ideas to life in ways we never imagined.",
-      avatar: pamAvatar
-    },
-    {
-      name: "Edu Mwangi",
-      location: "Kisumu, Kenya. 15, Mar 2024",
-      quote: "Sid's AI integration skills are game-changing. He helped our team implement machine learning solutions that revolutionized our workflow and productivity.",
-      avatar: eduAvatar
-    },
-    {
-      name: "Pam Rodriguez",
-      location: "Nakuru, Kenya. 8, Apr 2024",
-      quote: "Sid is an outstanding team player. His collaborative approach, clear communication, and problem-solving abilities make him invaluable to any project.",
-      avatar: pamAvatar
+      name: "William Nzuli",
+      location: "Mombasa, Kenya. 28, Aug 2025",
+      quote: "I highly recommend Nyenzo as an exceptional software engineer and data scientist. Throughout our work together, he has consistently demonstrated deep technical expertise in web development and machine learning, coupled with an unwavering commitment to delivering high-quality results.",
+      avatar: liamAvatar
     }
+    // {
+    //   name: "Edu Mwangi",
+    //   location: "Kisumu, Kenya. 15, Mar 2024",
+    //   quote: "Sid's AI integration skills are game-changing. He helped our team implement machine learning solutions that revolutionized our workflow and productivity.",
+    //   avatar: eduAvatar
+    // },
+    // {
+    //   name: "Pam Rodriguez",
+    //   location: "Nakuru, Kenya. 8, Apr 2024",
+    //   quote: "Sid is an outstanding team player. His collaborative approach, clear communication, and problem-solving abilities make him invaluable to any project.",
+    //   avatar: pamAvatar
+    // }
   ]
 
   // Create a duplicated array for seamless looping

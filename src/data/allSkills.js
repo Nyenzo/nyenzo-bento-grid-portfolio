@@ -1,4 +1,4 @@
 export const techStack = [
-  "Python", "Next.js", "React", "Node.js", "Tensorflow", "MongoDB", 
+  "Python", "Next.js", "Flask", "React", "Node.js", "Tensorflow", "MongoDB", 
   "PostgreSQL", "Scikit-learn", "Docker", "Git", "Tailwind", "Tableau"
 ]
