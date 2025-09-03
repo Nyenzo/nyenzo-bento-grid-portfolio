@@ -37,7 +37,7 @@ const projects = [
     description: "Personal portfolio website.",
     details: "Modern design, project gallery, and contact form.",
     tech: ["React", "Vite", "CSS"],
-    link: "https://my-portfolio.example.com"
+    link: "https://nyenzo.github.io/nyenzo-portfolio/index.html"
   },
   {
     id: 4,
