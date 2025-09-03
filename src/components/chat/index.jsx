@@ -10,6 +10,7 @@ import MessageInput from "./MessageInput"
 import MessageList from "./MessageList"
 import { Hatch } from 'ldrs/react'
 import 'ldrs/react/Hatch.css'
+import meImage from "../../assets/avatars/me.jpg"
 
 const currentThreadIdStorageKey = "nyenzobot_current_thread_id"
 
@@ -60,7 +61,7 @@ export default function Chat({initialMessage}) {
     <div className="chat-container">
       <div className="chat-header">
         <div className="chat-header-avatar">
-          <img src="/src/assets/avatars/me.jpg" 
+          <img src={meImage}
           alt="AssistantAvatar"
           />
         </div>
