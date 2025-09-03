@@ -5,7 +5,7 @@ import { Star } from "lucide-react"
 import tonyAvatar from "../../assets/avatars/tony.jpg"
 import liamAvatar from "../../assets/avatars/liam.jpg"
 // import pamAvatar from "../../assets/avatars/pam.jpg"
-// import eduAvatar from "../../assets/avatars/edu.jpg"
+import catieAvatar from "../../assets/avatars/catie.jpg"
 import "../../styles/testimonials.css"
 import "../../styles/cards.css"
 
@@ -26,13 +26,13 @@ export default function TestimonialsSection({ delay = 0 }) {
       location: "Mombasa, Kenya. 28, Aug 2025",
       quote: "I highly recommend Nyenzo as an exceptional software engineer and data scientist. Throughout our work together, he has consistently demonstrated deep technical expertise in web development and machine learning, coupled with an unwavering commitment to delivering high-quality results.",
       avatar: liamAvatar
-    }
-    // {
-    //   name: "Edu Mwangi",
-    //   location: "Kisumu, Kenya. 15, Mar 2024",
-    //   quote: "Sid's AI integration skills are game-changing. He helped our team implement machine learning solutions that revolutionized our workflow and productivity.",
-    //   avatar: eduAvatar
-    // },
+    },
+    {
+      name: "Catherine Matu",
+      location: "Nairobi, Kenya. 30, Aug 2025",
+      quote: "I had the pleasure of working with Nyenzo on several projects, and I was consistently impressed by his technical acumen and reliability. His skills in React, JavaScript, and debugging are top-notch—he approaches challenges with precision and always delivers high-quality work on time.",
+      avatar: catieAvatar
+    },
     // {
     //   name: "Pam Rodriguez",
     //   location: "Nakuru, Kenya. 8, Apr 2024",
