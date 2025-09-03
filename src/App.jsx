@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom"
 import { useEffect } from "react"
 import HomePage from "./components/pages/HomePage.jsx"
 import ChatPage from "./components/pages/ChatPage.jsx"
+import Works from "./components/pages/Works.jsx"
 
 export default function App() {
   // Ensure 100vh calculations are correct on mobile by using JS-measured viewport height
@@ -24,7 +25,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/chat" element={<ChatPage />} />
-        <Route path="/work" element={<div>Work Page</div>} />
+        <Route path="/works" element={<Works />} />
       </Routes>
     </div>
   )

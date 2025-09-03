@@ -27,8 +27,6 @@ export default function ASKAISection({ delay = 0 }) {
             placeholder="Ask me anything about my work..."
             className="chat-input"
             onFocus={() => {
-              // This will be replaced with actual chatbot integration later
-              // For now, it can link to the works page
               window.location.href = '/chat'
             }}
           />
